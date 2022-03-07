@@ -43,8 +43,8 @@ namespace PortableModeUtil
 		if (g_portableMode) return;
 		if (fs::is_directory(g_dataPath)) return;
 
-		int button;
-		if (SUCCEEDED(TaskDialog(nullptr, g_hInst, _(L"Portable Mode"), nullptr, _(L"Do you want to enable portable mode?\nEnabling portable mode will disable non-portable features like start at login and URL protocol."), TDCBF_YES_BUTTON | TDCBF_NO_BUTTON, MAKEINTRESOURCEW(IDI_CLASHXW), &button)) && button == IDYES)
+		//int button;
+		//if (SUCCEEDED(TaskDialog(nullptr, g_hInst, _(L"Portable Mode"), nullptr, _(L"Do you want to enable portable mode?\nEnabling portable mode will disable non-portable features like start at login and URL protocol."), TDCBF_YES_BUTTON | TDCBF_NO_BUTTON, MAKEINTRESOURCEW(IDI_CLASHXW), &button)) && button == IDYES)
 		{
 			g_portableMode = true;
 			g_dataPath = std::move(g_exePath / CLASHXW_DATA_DIR_PORTABLE);
